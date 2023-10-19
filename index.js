@@ -21,6 +21,9 @@ app.use(
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/todo", require("./routes/todo"));
 
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome TO DO API" });
+});
 
 connectToMongoDB();
 
