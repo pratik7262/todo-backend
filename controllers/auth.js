@@ -39,7 +39,7 @@ const signUp = async (req, res) => {
       }
     );
 
-    const verificationLink = `${process.env.BASE_URL}api/auth/verify/${newUser._id}/${authToken}`;
+    const verificationLink = `${process.env.BASE_URL}/api/auth/verify/${newUser._id}/${authToken}`;
     await sendEmail(req.body.email, "VERIFY EMAIL", verificationLink);
 
     return res.json({
