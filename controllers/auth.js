@@ -48,6 +48,7 @@ const signUp = async (req, res) => {
       success: true,
     });
   } catch (error) {
+    console.log(error);
     return handleErrors(
       res,
       500,
