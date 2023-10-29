@@ -17,7 +17,7 @@ const signUp = async (req, res) => {
     if (existingUser) {
       return res.status(400).json({
         success: false,
-        resMSG:
+        message:
           "User with this email already exists. Please enter a unique email.",
       });
     }
@@ -43,7 +43,7 @@ const signUp = async (req, res) => {
     await sendEmail(req.body.email, "VERIFY EMAIL", verificationLink);
 
     return res.json({
-      resMSG:
+      message:
         "Verification link has been sent to your email. Please verify your account.",
       success: true,
     });
