@@ -7,7 +7,7 @@ const sendEmail = require("../utils/email");
 
 //Sign Up Function Used To Create New User In SignUp End Point
 const signUp = async (req, res) => {
-  try {
+  // try {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       return handleErrors(res, 400, errors.array()[0].msg, false);
@@ -47,14 +47,14 @@ const signUp = async (req, res) => {
         "Verification link has been sent to your email. Please verify your account.",
       success: true,
     });
-  } catch (error) {
-    return handleErrors(
-      res,
-      500,
-      "Server error occurred. Please try again.",
-      false
-    );
-  }
+  // } catch (error) {
+  //   return handleErrors(
+  //     res,
+  //     500,
+  //     "Server error occurred. Please try again.",
+  //     false
+  //   );
+  // }
 };
 
 //Verify Function Used To Verify User Used In Verification End Point
